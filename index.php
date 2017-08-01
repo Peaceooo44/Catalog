@@ -15,21 +15,24 @@ $queryBuilder = new QueryBuilder(
 
 $disk = new Disk('RHCP', 23, 500, 'Scandi', $queryBuilder);
 
-// $queryBuilder->insert('disks', [
-//     'title' => $disk->title,
-//     'price' => $disk->price,
-//     'size' => $disk->sizeInMb,
-//     'manufacturer' => $disk->manufacturer,
-// ]);
+$queryBuilder->insert('disks', [
+    'title' => $disk->title,
+    'price' => $disk->price,
+    'size' => $disk->size,
+    'manufacturer' => $disk->manufacturer,
+]);
 
-$furniture = new Furniture('Desk', 34, 349, 'Wood');
+$furniture = new Furniture('Desk', 34, '200x300x500', 'Wood', $queryBuilder);
 
-// $queryBuilder->insert('furniture', [
-//     'title' => $furniture->title,
-//     'price' => $furniture->price,
-//     'size' => $furniture->size,
-//     'material' => $furniture->material,
-// ]);
+$queryBuilder->insert('furniture', [
+    'title' => $furniture->title,
+    'price' => $furniture->price,
+    'size' => $furniture->size,
+    'material' => $furniture->material,
+]);
 
-// echo $disk->getAllAttributes(1, $queryBuilder);
-echo $furniture->getAllAttributes(1, $queryBuilder);
+echo $disk->getAttribute(1, 'title') . "<br><br>";
+echo $furniture->getAttribute(1, 'size') . "<br><br>";
+echo $disk->getAllAttributes(1) . "<br><br>";
+echo $furniture->getAllAttributes(1) . "<br><br>";
+echo $disk->getProductName(1);
