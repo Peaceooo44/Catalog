@@ -11,7 +11,7 @@ class Disk extends Product
     public $size;
     public $manufacturer;
 
-    public function __construct($title, $price, $size, $manufacturer, QueryBuilder $q)
+    public function __construct(string $title, int $price, int $size, string $manufacturer, QueryBuilder $q)
     {
         parent::__construct($title, $price, $q);
         $this->size = $size;

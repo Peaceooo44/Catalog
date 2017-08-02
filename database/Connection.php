@@ -7,7 +7,7 @@ use \PDO;
 class Connection
 {
 
-    public static function make($config)
+    public static function make(array $config)
     {
         try {
             $pdo = new PDO(

@@ -44,7 +44,7 @@ abstract class Product
         return $this->q->selectAttribute($id, $attr, self::getTable());
     }
 
-    public function getProductName($id)
+    public function getProductName(int $id)
     {
         $results = $this->q->select($id, self::getTable());
 
